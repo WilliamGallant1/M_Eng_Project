@@ -1,0 +1,23 @@
+
+# Publish all joint states for us to read with /joint_states
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 1000
+  joints:
+    - j2n6s300_joint_1
+    - j2n6s300_joint_2
+    - j2n6s300_joint_3
+    - j2n6s300_joint_4
+    - j2n6s300_joint_5
+    - j2n6s300_joint_6
+
+# Direct effort control for all joints
+joint_group_effort_controller:
+    type: effort_controllers/JointGroupEffortController
+    joints:
+      - j2n6s300_joint_1
+      - j2n6s300_joint_2
+      - j2n6s300_joint_3
+      - j2n6s300_joint_4
+      - j2n6s300_joint_5
+      - j2n6s300_joint_6

@@ -1,0 +1,12 @@
+# Configuration file of the controller + gains + other parameters to pass on the server
+
+P_gains: [340.0, 225.0, 485.0, 50.0, 200.0, 950.0]
+
+D_gains: [2.0, 2.0, 2.0, 4.0, 2.0, 1.0]
+
+target_positions: [4.8, 2.9, 1.0, 4.2, 1.5, 1.25] #home position for the physical kinova jaco2 arm
+
+# Publishing rate for planner/controller
+param_publish_rate : 500
+
+

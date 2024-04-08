@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<launch>
+
+<arg name="robot_name" default="j2n6s300"/>
+
+<group ns="$(arg robot_name)">
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find jaco_inv_dynamics_controller)/config/inv_dynamics_controller.yaml" command="load"/>
+  
+  <!--for pinocchio library-->
+  <param name="urdf_file_name" value="$(find kinova_description)/urdf/j2n6s300_standalonesimplified.urdf"/>
+
+  <!--launches controller and planner nodes-->
+  <node pkg="jaco_inv_dynamics_controller" type="joint_dynamic_controller" name="joint_controller"/>
+  <node pkg="jaco_inv_dynamics_controller" type="joint_dynamic_planner" name="joint_planner" output="screen"/>
+
+</group>
+
+</launch>

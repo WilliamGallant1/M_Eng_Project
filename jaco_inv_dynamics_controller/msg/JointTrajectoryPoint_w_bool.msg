@@ -1,0 +1,2 @@
+trajectory_msgs/JointTrajectoryPoint traj_point
+bool service_called
